@@ -58,7 +58,7 @@ namespace kerberos
             // Send a post to URL
 
             LINFO << "IoWebhook: post to webhook " + (std::string) getUrl();
-            RestClient::Response r = webhookConnection->post("/", buffer.GetString());
+            RestClient::Response r = webhookConnection->post(getUrl(), buffer.GetString());
 
             if(r.code == 200)
             {
