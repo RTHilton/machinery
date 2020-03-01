@@ -21,7 +21,7 @@ ExternalProject_Add(opencv
     -DBUILD_opencv_video=ON
     -DBUILD_opencv_apps=OFF
     -DBUILD_opencv_flann=ON
-    -DBUILD_opencv_gpu=OFF
+    -DBUILD_opencv_gpu=ON
     -DBUILD_opencv_ml=ON
     -DBUILD_opencv_legacy=OFF
     -DBUILD_opencv_calib3d=OFF
