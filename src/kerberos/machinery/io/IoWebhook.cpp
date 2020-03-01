@@ -64,7 +64,8 @@ namespace kerberos
             {
                 return true;
             }
-
+            LINFO << "IoWebhook: response code " + std::to_string(r.code);
+            LINFO << "IoWebook: response body " + (std::string) r.body;
             return false;
       }
 
