@@ -85,7 +85,7 @@ namespace kerberos
 
         std::vector<std::vector<cv::Point> > contours;
         std::vector<cv::Vec4i> hierarchy;
-        cv::findContours(image.getImage(), contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_NONE);
+        cv::findContours(image.getImage(), contours, hierarchy, cv::RETR_TREE, cv::CHAIN_APPROX_NONE);
 
         int numberOfContours= 0;
         for(int i = 0; i < m_features.size(); i++)
