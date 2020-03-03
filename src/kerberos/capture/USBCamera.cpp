@@ -112,9 +112,9 @@ namespace kerberos
         Capture::setImageSize(width, height);
         try
         {
-            m_camera->set(CV_CAP_PROP_FRAME_WIDTH, m_frameWidth);
-            m_camera->set(CV_CAP_PROP_FRAME_HEIGHT, m_frameHeight);
-            m_camera->set(CV_CAP_PROP_FOURCC, CV_FOURCC(m_fourcc[0], m_fourcc[1], m_fourcc[2], m_fourcc[3]));
+            m_camera->set(cv::CAP_PROP_FRAME_WIDTH, m_frameWidth);
+            m_camera->set(cv::CAP_PROP_FRAME_HEIGHT, m_frameHeight);
+            m_camera->set(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc(m_fourcc[0], m_fourcc[1], m_fourcc[2], m_fourcc[3]));
         }
         catch(cv::Exception & ex)
         {
