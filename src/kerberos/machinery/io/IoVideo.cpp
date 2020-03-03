@@ -404,7 +404,7 @@ namespace kerberos
     {
         IoVideo * video = (IoVideo *) self;
 
-        double cronoPause = (double)cvGetTickCount();
+        double cronoPause = (double)cv::getTickCount();
         double cronoTime = (double) (cv::getTickCount() / cv::getTickFrequency());
         double startedRecording = cronoTime;
 
@@ -479,7 +479,7 @@ namespace kerberos
     {
         IoVideo * video = (IoVideo *) self;
 
-        double cronoPause = (double)cvGetTickCount();
+        double cronoPause = (double)cv::getTickCount();
         double cronoTime = (double) (cv::getTickCount() / cv::getTickFrequency());
         double startedRecording = cronoTime;
 
@@ -555,7 +555,7 @@ namespace kerberos
         IoVideo * video = (IoVideo *) self;
 
         double tickFrequency = cv::getTickFrequency();
-        double cronoPause = (double)cvGetTickCount();
+        double cronoPause = (double)cv::getTickCount();
         double cronoFPS = cronoPause;
         double cronoTime = (double) (cv::getTickCount() / tickFrequency);
         double timeToSleep = 0;
