@@ -24,7 +24,7 @@ namespace kerberos
     void Image::createMask(int width, int height, PointVector & points)
     {
         cv::Mat mat;
-        mat = cv::Mat::zeros(height, width, cv::COLOR_YUB2RGB);
+        mat = cv::Mat::zeros(height, width, cv::COLOR_YUV2RGB);
         cv::Vec3b black(255,255,255);
         
         for(int i = 0; i < points.size(); i++)
