@@ -54,7 +54,7 @@ ExternalProject_Add(opencv
     -DBUILD_FAT_JAVA_LIB=OFF
     -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_BINARY_DIR}/thirdparty
 )
-
+set(OPENCV_INCLUDE_OPENCV4_DIR ${CMAKE_BINARY_DIR}/thirdparty/include/opencv4/)
 set(OPENCV_INCLUDE_DIR ${CMAKE_BINARY_DIR}/thirdparty/include/)
 if(NOT WIN32)
   set(OPENCV_LIBRARY_DIR ${CMAKE_BINARY_DIR}/thirdparty/lib/)
@@ -64,7 +64,7 @@ endif()
 
 set(OPENCV_LIBRARIES opencv_imgproc opencv_core opencv_highgui opencv_video opencv_videoio opencv_imgcodecs opencv_features2d)
 
-include_directories(${OPENCV_INCLUDE_DIR})
+include_directories(${OPENCV_INCLUDE_DIR} ${OPENCV_INCLUDE_OPENCV4_DIR})
 link_directories(${OPENCV_LIBRARY_DIR})
 
 if(EXISTS "${CMAKE_BINARY_DIR}/thirdparty/share/OpenCV/OpenCVConfig.cmake")
