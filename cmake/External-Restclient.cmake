@@ -9,7 +9,7 @@ ExternalProject_Add(restclient
   PATCH_COMMAND ""
   CONFIGURE_COMMAND ./autogen.sh && ./configure
   BUILD_COMMAND make && mkdir -p ../thirdparty/lib/ && cp .libs/librestclient-cpp.a ../thirdparty/lib/
-  INSTALL_COMMAND ""
+  INSTALL_COMMAND "make install"
 )
 
 set(RESTCLIENT_INCLUDE_DIR ${CMAKE_BINARY_DIR}/restclient/include/)
