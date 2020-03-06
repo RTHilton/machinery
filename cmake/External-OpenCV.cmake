@@ -36,7 +36,7 @@ ExternalProject_Add(opencv
     -DBUILD_opencv_superres=OFF
     -DBUILD_opencv_ts=OFF
     -DBUILD_opencv_videostab=OFF
-    -DBUILD_SHARED_LIBS=ON
+    -DBUILD_SHARED_LIBS=OFF
     -DBUILD_TESTS=OFF
     -DBUILD_PERF_TESTS=OFF
     -DBUILD_opencv_contrib=ON
@@ -58,6 +58,7 @@ set(OPENCV_INCLUDE_OPENCV4_DIR ${CMAKE_BINARY_DIR}/thirdparty/include/opencv4/)
 set(OPENCV_INCLUDE_DIR ${CMAKE_BINARY_DIR}/thirdparty/include/)
 if(NOT WIN32)
   set(OPENCV_LIBRARY_DIR ${CMAKE_BINARY_DIR}/thirdparty/lib/)
+  set(OPENCV_LIBRARY_OPENCV4_DIR ${CMAKE_BINARY_DIR}/thirdparty/lib/opencv4)
 else()
   set(OPENCV_LIBRARY_DIR ${CMAKE_BINARY_DIR}/thirdparty/x86/vc12/lib)
 endif()
@@ -65,7 +66,7 @@ endif()
 set(OPENCV_LIBRARIES opencv_imgproc opencv_core opencv_highgui opencv_video opencv_videoio opencv_imgcodecs opencv_features2d)
 
 include_directories(${OPENCV_INCLUDE_DIR} ${OPENCV_INCLUDE_OPENCV4_DIR})
-link_directories(${OPENCV_LIBRARY_DIR})
+link_directories(${OPENCV_LIBRARY_DIR} ${OPENCV_LIBRARY_OPENCV4_DIR})
 
 if(EXISTS "${CMAKE_BINARY_DIR}/thirdparty/share/OpenCV/OpenCVConfig.cmake")
     include(${CMAKE_BINARY_DIR}/thirdparty/share/OpenCV/OpenCVConfig.cmake)
