@@ -104,8 +104,8 @@ namespace kerberos
         Capture::setImageSize(width, height);
         try
         {
-            m_video->set(CV_CAP_PROP_FRAME_WIDTH, m_frameWidth);
-            m_video->set(CV_CAP_PROP_FRAME_HEIGHT, m_frameHeight);
+            m_video->set(cv::CAP_PROP_FRAME_WIDTH, m_frameWidth);
+            m_video->set(cv::CAP_PROP_FRAME_HEIGHT, m_frameHeight);
         }
         catch(cv::Exception & ex)
         {

@@ -404,7 +404,7 @@ namespace kerberos
     {
         IoVideo * video = (IoVideo *) self;
 
-        double cronoPause = (double)cvGetTickCount();
+        double cronoPause = (double)cv::getTickCount();
         double cronoTime = (double) (cv::getTickCount() / cv::getTickFrequency());
         double startedRecording = cronoTime;
 
@@ -479,7 +479,7 @@ namespace kerberos
     {
         IoVideo * video = (IoVideo *) self;
 
-        double cronoPause = (double)cvGetTickCount();
+        double cronoPause = (double)cv::getTickCount();
         double cronoTime = (double) (cv::getTickCount() / cv::getTickFrequency());
         double startedRecording = cronoTime;
 
@@ -555,7 +555,7 @@ namespace kerberos
         IoVideo * video = (IoVideo *) self;
 
         double tickFrequency = cv::getTickFrequency();
-        double cronoPause = (double)cvGetTickCount();
+        double cronoPause = (double)cv::getTickCount();
         double cronoFPS = cronoPause;
         double cronoTime = (double) (cv::getTickCount() / tickFrequency);
         double timeToSleep = 0;
@@ -674,7 +674,7 @@ namespace kerberos
             tstruct = *localtime(&now);
             strftime(buf, sizeof(buf), timeformat, &tstruct);
 
-            cv::rectangle(image.getImage(), cv::Point(7,16), cv::Point(200,37), CV_RGB(0,0,0), CV_FILLED);
+            cv::rectangle(image.getImage(), cv::Point(7,16), cv::Point(200,37), CV_RGB(0,0,0), cv::FILLED);
             cv::putText(image.getImage(), buf, cv::Point(10,30), cv::FONT_HERSHEY_SIMPLEX, 0.5, getTimestampColor());
         }
     }
